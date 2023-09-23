@@ -1,0 +1,8 @@
+{
+  "id": 2,
+  "menuName": "speech to text",
+  "imports": {
+    "element-plus": "https://esm.run/element-plus@2.1.10",
+    "element-plus/dist/index.css": "https://esm.run/element-plus@2.1.10/dist/index.css"
+  }
+}
