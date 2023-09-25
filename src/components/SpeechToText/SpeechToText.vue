@@ -3,8 +3,12 @@ import { EnglishRecognizer } from './SpeechToText'
 import { ref, computed } from 'vue'
 import { ElInput, ElButton } from 'element-plus'
 
-const props = defineProps(['modelValue'])
-const emit = defineEmits(['update:modelValue'])
+const props = defineProps<{
+  modelValue: string
+}>()
+const emit = defineEmits<{
+  'update:modelValue': [value: string]
+}>()
 const voiceInput = computed({
   get() {
     return props.modelValue

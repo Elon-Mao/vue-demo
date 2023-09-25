@@ -41,7 +41,7 @@ export default function generateMenu() {
     const componentPath = path.join(__dirname, component)
     fs.readdirSync(componentPath).forEach((file: string) => {
       const filePath = path.join(componentPath, file)
-      const fileData = fs.readFileSync(filePath, 'utf8')
+      const fileData = fs.readFileSync(filePath, 'utf8').replaceAll('\r', '')
       if (file === 'info.json') {
         const jsonData = JSON.parse(fileData)
         jsonData.files = menuItemFiles

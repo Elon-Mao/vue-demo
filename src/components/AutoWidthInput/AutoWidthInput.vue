@@ -2,8 +2,12 @@
 import { computed, ref, onMounted, nextTick, type CSSProperties } from 'vue'
 import { ElInput, type InputInstance } from 'element-plus'
 
-const props = defineProps(['modelValue'])
-const emit = defineEmits(['update:modelValue'])
+const props = defineProps<{
+  modelValue: string
+}>()
+const emit = defineEmits<{
+  'update:modelValue': [value: string]
+}>()
 const value = computed({
   get() {
     return props.modelValue

@@ -10,12 +10,10 @@ const handleSelect = async (key: string) => {
   if (activeMenuId === keyNum) {
     return
   }
-  // completeLoading.value = false
   activeMenuId = keyNum
   store.setFiles(menusItems.find(menusItem => menusItem.id === keyNum)!.files)
 }
 
-// const completeLoading = ref(false)
 const menusItems = MENU_DATA
 let activeMenuId = MENU_DATA[0].id
 const store = new ReplStore()
