@@ -1,8 +1,4 @@
 {
   "id": 3,
-  "menuName": "Youtube player",
-  "imports": {
-    "element-plus": "https://esm.run/element-plus@2.1.10",
-    "element-plus/dist/index.css": "https://esm.run/element-plus@2.1.10/dist/index.css"
-  }
+  "menuName": "Youtube player"
 }

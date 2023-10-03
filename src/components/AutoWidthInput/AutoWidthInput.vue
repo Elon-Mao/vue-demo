@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, onMounted, nextTick, type CSSProperties } from 'vue'
+import { computed, ref, onMounted, type CSSProperties } from 'vue'
 import { ElInput, type InputInstance } from 'element-plus'
 
 const props = defineProps<{
@@ -20,18 +20,16 @@ const value = computed({
 const inputInstance = ref<InputInstance>()
 const spanStyle = ref<CSSProperties>()
 onMounted(() => {
-  nextTick(() => {
-    const anwserInput = inputInstance.value!.input!
-    const inputStyle = getComputedStyle(anwserInput)
-    const inputWrapperStyle = getComputedStyle(anwserInput.parentElement!)
-    spanStyle.value = {
-      padding: inputWrapperStyle.padding,
-      lineHeight: inputWrapperStyle.height,
-      fontSize: inputStyle.fontSize,
-      fontWeight: inputStyle.fontWeight,
-      fontFamily: inputStyle.fontFamily
-    }
-  })
+  const anwserInput = inputInstance.value!.input!
+  const inputStyle = getComputedStyle(anwserInput)
+  const inputWrapperStyle = getComputedStyle(anwserInput.parentElement!)
+  spanStyle.value = {
+    padding: inputWrapperStyle.padding,
+    lineHeight: inputWrapperStyle.height,
+    fontSize: inputStyle.fontSize,
+    fontWeight: inputStyle.fontWeight,
+    fontFamily: inputStyle.fontFamily
+  }
 })
 </script>
 
