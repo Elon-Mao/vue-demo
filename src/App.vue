@@ -38,10 +38,8 @@ store.setFiles(MENU_DATA[0].files)
         </el-menu>
       </el-aside>
       <el-main class="main-height">
-        <el-scrollbar>
-          <Repl :store="store" :editor="CodeMirror" :show-import-map="false" :show-ts-config="false"
-            :show-compile-output="false" />
-        </el-scrollbar>
+        <Repl :store="store" :editor="CodeMirror" :show-import-map="false" :show-ts-config="false"
+          :show-compile-output="false" />
       </el-main>
     </el-container>
   </el-container>
