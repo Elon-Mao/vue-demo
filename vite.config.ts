@@ -11,10 +11,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
-      '@vue/repl': 'https://esm.run/@vue/repl@2.5.8',
-      'element-plus': 'https://esm.run/element-plus@2.1.10',
-      'vue': 'https://esm.run/vue@3.3.4'
+      '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
   base: '/vue-demo',

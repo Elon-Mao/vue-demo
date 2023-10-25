@@ -1,3 +1,5 @@
+import fs from 'fs'
+import path from 'path'
 import type MenuItem from '@/types/MenuItem'
 
 const stringifyJS = (value: any) => {
@@ -5,8 +7,8 @@ const stringifyJS = (value: any) => {
 }
 
 const defaultImportMap = {
-  "vue": "https://esm.run/vue@3.3.4",
-  "vue/server-renderer": "https://esm.run/vue@3.3.4/server-renderer",
+  "vue": "https://esm.run/vue@3.3.7",
+  "vue/server-renderer": "https://esm.run/vue@3.3.7/server-renderer",
   "element-plus": "https://esm.run/element-plus@2.1.10",
   "element-plus/dist/index.css": "https://esm.run/element-plus@2.1.10/dist/index.css"
 }
@@ -27,8 +29,6 @@ const defaultTSconfig = {
 
 export default function generateMenu() {
   const menuItems: MenuItem[] = []
-  const fs = require('fs')
-  const path = require('path')
   console.log(__dirname)
   fs.readdirSync(__dirname).forEach((component: string) => {
     if (component === 'menu.ts') {
