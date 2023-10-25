@@ -52,7 +52,7 @@ const loadVideo = () => {
   player.loadVideoById(props.videoId)
 }
 
-let playerTimeInterval: NodeJS.Timer
+let playerTimeInterval: NodeJS.Timeout
 let currentTime = 0
 let seeking = false
 const onPlayerReady = () => {
