@@ -22,25 +22,61 @@ store.setFiles(MENU_DATA[0].files)
 
 <template>
   <el-container>
-    <el-header></el-header>
+    <el-header class="page-header">
+      <a href="https://vuejs.org/" target="_blank">
+        <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
+      </a>
+      <span>Live Vue Demo</span>
+      <a href="https://elon-mao.github.io/react-demo/" target="_blank">React Demo</a>
+    </el-header>
     <el-container>
       <el-aside width="200px">
-        <el-menu :default-active="activeMenuId" class="el-menu-vertical-demo main-menu" @select="handleSelect">
+        <el-menu :default-active="activeMenuId" class="el-menu-vertical-demo main-height" @select="handleSelect">
           <el-menu-item v-for="menuItem in menusItems" :index="menuItem.id">
             {{ menuItem.menuName }}
           </el-menu-item>
         </el-menu>
       </el-aside>
-      <el-main>
-        <Repl :store="store" :editor="CodeMirror" :show-import-map="false" :show-ts-config="false"
-          :show-compile-output="false" />
+      <el-main class="main-height">
+        <el-scrollbar>
+          <Repl :store="store" :editor="CodeMirror" :show-import-map="false" :show-ts-config="false"
+            :show-compile-output="false" />
+        </el-scrollbar>
       </el-main>
     </el-container>
   </el-container>
 </template>
 
 <style scoped>
-.main-menu {
-  min-height: calc(100vh - 100px);
+.page-header {
+  background-color: #1976d2;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+}
+
+.page-header>a,
+.page-header>span {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+  color: white;
+}
+
+.page-header>span {
+  margin-left: 10px;
+  flex-grow: 1;
+}
+
+.main-height {
+  height: calc(100vh - 100px);
+}
+</style>
+
+<style>
+body {
+  margin: 0;
 }
 </style>
