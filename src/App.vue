@@ -28,6 +28,7 @@ store.setFiles(MENU_DATA[0].files)
       </a>
       <span>Live Vue Demo</span>
       <a href="https://elon-mao.github.io/react-demo/" target="_blank">React Demo</a>
+      <a href="https://elon-mao.github.io/dictation/" target="_blank">Dictation</a>
     </el-header>
     <el-container>
       <el-aside width="200px">
@@ -55,6 +56,7 @@ store.setFiles(MENU_DATA[0].files)
 
 .page-header>a,
 .page-header>span {
+  margin-left: 10px;
   font-family: Roboto, Helvetica, Arial, sans-serif;
   font-weight: 500;
   font-size: 1.25rem;
@@ -64,7 +66,6 @@ store.setFiles(MENU_DATA[0].files)
 }
 
 .page-header>span {
-  margin-left: 10px;
   flex-grow: 1;
 }
 
