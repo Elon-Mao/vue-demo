@@ -7,8 +7,8 @@ const stringifyJS = (value: any) => {
 }
 
 const defaultImportMap = {
-  "vue": "https://esm.run/vue@3.3.8",
-  "vue/server-renderer": "https://esm.run/vue@3.3.8/server-renderer",
+  "vue": "https://esm.run/vue@vueVersion",
+  "vue/server-renderer": "https://esm.run/vue@vueVersion/server-renderer",
   "element-plus": "https://esm.run/element-plus@2.1.10",
   "element-plus/dist/index.css": "https://esm.run/element-plus@2.1.10/dist/index.css"
 }

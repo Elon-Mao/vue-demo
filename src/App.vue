@@ -5,6 +5,17 @@ import '@vue/repl/style.css'
 import type MenuItem from '@/types/MenuItem'
 declare const MENU_DATA: MenuItem[]
 
+fetch('https://esm.run/element-plus@2.1.10').then(response => {
+  response.text().then(text => {
+    const matchResult = text.match(/\/vue@(.+?)\//)
+    const vueVersion = matchResult![1]
+    menusItems.forEach(menusItem => {
+      menusItem.files['import-map.json'] = menusItem.files['import-map.json'].replaceAll('vueVersion', vueVersion)
+    })
+    store.setFiles(menusItems[0].files)
+  })
+})
+
 const handleSelect = async (key: string) => {
   const keyNum = Number(key)
   if (activeMenuId === keyNum) {
@@ -15,9 +26,8 @@ const handleSelect = async (key: string) => {
 }
 
 const menusItems = MENU_DATA
-let activeMenuId = MENU_DATA[0].id
+let activeMenuId = menusItems[0].id
 const store = new ReplStore()
-store.setFiles(MENU_DATA[0].files)
 </script>
 
 <template>
