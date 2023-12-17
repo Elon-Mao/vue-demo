@@ -7,10 +7,8 @@ const stringifyJS = (value: any) => {
 }
 
 const defaultImportMap = {
-  "vue": "https://esm.run/vue@vueVersion",
-  "vue/server-renderer": "https://esm.run/vue@vueVersion/server-renderer",
-  "element-plus": "https://esm.run/element-plus@2.1.10",
-  "element-plus/dist/index.css": "https://esm.run/element-plus@2.1.10/dist/index.css"
+  "vue": "https://esm.run/vue@3.3.11",
+  "vue/server-renderer": "https://esm.run/vue@3.3.11/server-renderer",
 }
 const defaultTSconfig = {
   "compilerOptions": {
@@ -49,7 +47,7 @@ export default function generateMenu() {
         jsonData.files = menuItemFiles
         if (jsonData.imports) {
           menuItemFiles['import-map.json'] = stringifyJS({
-            imports: Object.assign(jsonData.imports, defaultImportMap)
+            imports: Object.assign({}, defaultImportMap, jsonData.imports)
           })
         }
         if (jsonData.tsconfig) {

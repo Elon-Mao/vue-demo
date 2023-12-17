@@ -1,4 +1,10 @@
 {
-  "id": 1,
-  "menuName": "Auto Width Input"
+  "id": 4,
+  "menuName": "Auto Width Input",
+  "imports": {
+    "vue": "https://esm.run/vue@vueVersion",
+    "vue/server-renderer": "https://esm.run/vue@vueVersion/server-renderer",
+    "element-plus": "https://esm.run/element-plus@2.1.10",
+    "element-plus/dist/index.css": "https://esm.run/element-plus@2.1.10/dist/index.css"
+  }
 }
