@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref, watch, onUnmounted } from 'vue'
 import type TreeNode from './TreeNode'
 
 const props = withDefaults(defineProps<{
@@ -32,7 +32,7 @@ const onPathChange = async () => {
 }
 
 let stateCallBack = false
-window.onpopstate = () => {
+const popStateListener = () => {
   if (stateCallBack) {
     onPathChange()
     stateCallBack = false
@@ -55,6 +55,11 @@ watch(props.path, async () => {
 const backByNode = (node: TreeNode) => {
   props.path.splice(props.path.indexOf(node.id) + 1)
 }
+
+addEventListener('popstate', popStateListener)
+onUnmounted(() => {
+  removeEventListener('popstate', popStateListener)
+})
 </script>
 
 <template>
